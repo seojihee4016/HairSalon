@@ -1,0 +1,471 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-duration: 0.8s;
+  /*한 섹션 씩 이동 transition*/
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #e9e6e4;
+}
+
+.sectionMove {
+  width: 100%;
+  height: 100vh;
+}
+
+/* =============================================첫번째 섹션===========================================*/
+/* ========================메뉴 버튼======================*/
+.menu ::before {
+  font-family: 'Material Icons';
+  font-size: 1.2rem;
+  float: left;
+  clear: left;
+}
+
+/* 구글 플랫 아이콘 */
+.menu label::before {
+  content: '\e5d2';
+}
+
+.menu li:nth-child(1) a::before {
+  content: '\ea70';
+}
+.menu li:nth-child(2) a::before {
+  content: '\f8d9';
+}
+.menu li:nth-child(3) a::before {
+  content: '\f8d9';
+}
+
+.menu li:nth-child(4) a::before {
+  content: '\e0cf';
+}
+
+.menu li:nth-child(5) a::before {
+  content: '\e897';
+}
+
+.menu li:nth-child(6) a::before {
+  content: '\e87d';
+}
+
+#expand-menu {
+  /* 체크박스 폼 요소 감추기 */
+  display: none;
+}
+
+#expand-menu:checked~ul {
+  /* 체크박스 체크되었으면 메뉴 목록 표시 - 반응형 표시용 */
+  display: block;
+  height: auto;
+}
+
+.menu {
+  display: block;
+  width: 250px;
+  color: black;
+  border-radius: 20px;
+  padding: 25px;
+  overflow: hidden;
+  /* 반응형 애니메이션용 */
+  transition: all 0.5s ease;
+  /* 반응형 애니메이션 */
+  position: absolute;
+  top: 10px;
+  /* right: 10px; */
+}
+
+.menu ul {
+  list-style: none;
+  /* margin: 0;
+padding: 0; */
+}
+
+.menu a,
+.menu>label {
+  display: block;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+
+}
+
+.menu a:hover {
+  /*마우스 올리면 색 변하게 만들기*/
+  color: red;
+}
+
+.menu div {
+  line-height: 0;
+  font-size: 10rem;
+  font-family: 'Noto Sans KR';
+  padding: 0 0 0 40px;
+  /* 아이콘과 텍스트 사이 여백 */
+}
+
+@media screen and (max-width:1023px) {
+  .menu {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width:560px) {
+  .menu #expand-menu:not(:checked)~ul {
+    display: none;
+  }
+}
+
+.menu div {
+  position: absolute;
+  /* 절대 위치로 텍스트 고정 */
+  left: 50px;
+  line-height: 1;
+  font-size: 1rem;
+  font-family: 'Noto Sans KR';
+  padding: 0 0 0 30px;
+}
+
+.menu #expand-menu:not(:checked)~ul {
+  /* 메뉴 펼치기 & 줄이기 */
+  display: none;
+}
+
+/* ========================웹페이지 로고======================*/
+.webName {
+  font-family: 'Caveat', cursive;
+  color: #000000;
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+/* ========================메인 이미지======================*/
+.mainImage {
+  width: 40%;
+  height: 86.3vh;
+  /*이미지 가운데 정렬*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  bottom: 10px;
+}
+a{
+  text-decoration: none;
+}
+/* ========================메인 이미지 로고======================*/
+.imageLogo {
+  color: rgb(229, 229, 203);
+  text-shadow: 2px 2px 2px rgb(41, 36, 36);
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  position: relative;
+  bottom: 150px;
+  font-size: 6.5rem;
+}
+/* =============================================두번째 섹션===========================================*/
+/* ========================서비스 로고======================*/
+.container {
+  position: relative;
+  top: 30px;
+  text-align: center;
+  animation: flyin 2.8s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  -webkit-animation: flyin 2.8s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  -moz-animation: flyin 2.8s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+.container div {
+  position: relative;
+  font-family: 'Helvetica', sans-serif;
+  color: red;
+  display: inline-block;
+  font-size: 3.5em;
+  font-weight: bold;
+  letter-spacing: 25px;
+  line-height: 1.3;
+  transition: all 2.8s ease;
+  opacity: 1;
+}
+.container.invisible div:first-child {
+  transform: translateX(-50px) translateY(100px);
+}
+.container.invisible div:nth-child(2) {
+  transform: translateX(20px) translateY(100px);
+}
+.container.invisible div:nth-child(3) {
+  transform: translateX(-150px) translateY(-80px);
+}
+.container.invisible div:nth-child(4) {
+  transform: translateX(10px) translateY(-200px);
+}
+.container.invisible div:nth-child(5) {
+  transform: translateX(-300px) translateY(200px);
+}
+.container.invisible div:nth-child(6) {
+  transform: translateX(200px) translateY(-60px);
+}
+.container.invisible div:nth-child(7) {
+  transform: translateX(30px) translateY(200px);
+}
+.container.invisible div:nth-child(8) {
+  transform: translateX(50px) translateY(100px);
+}
+.container.invisible div:nth-child(9) {
+  transform: translateX(-30px) translateY(90px);
+}
+.container.invisible div:nth-child(10) {
+  transform: translateX(10px) translateY(-90px);
+}
+.container.invisible div:nth-child(11) {
+  transform: translateX(-90px) translateY(50px);
+}
+.container.invisible div:nth-child(12) {
+  transform: translateX(30px) translateY(150px);
+}
+.container.invisible div:nth-child(13) {
+  transform: translateX(200px) translateY(20px);
+}
+.container.invisible div:nth-child(14) {
+  transform: translateX(100px) translateY(-110px);
+}
+.container.invisible div:nth-child(15) {
+  transform: translateX(-20px) translateY(200px);
+}
+.container.invisible div:nth-child(16) {
+  transform: translateX(45px) translateY(80px);
+}
+.container.invisible div:nth-child(17) {
+  transform: translateX(-250px) translateY(500px);
+}
+.container.invisible div:nth-child(18) {
+  transform: translateX(-250px) translateY(350px);
+}
+.container.invisible div:nth-child(19) {
+  transform: translateX(-900px) translateY(20px);
+}
+.container.invisible div:nth-child(20) {
+  transform: translateX(-300px) translateY(80px);
+}
+.container.invisible div:nth-child(21) {
+  transform: translateX(70px) translateY(-200px);
+}
+/* =======================서비스 소개 이미지===================== */
+.serviceContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.serviceHover {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  max-width: 270px;
+  max-height: 70%;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 300% / 200%;
+  margin: 80px 10px 10px 70px; /*상 우 하 좌*/
+}
+
+.serviceInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+
+
+figure.serviceHover * {
+  -webkit-box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+figure.serviceHover:after,
+figure.serviceHover:before,
+figure.serviceHover figcaption:after,
+figure.serviceHover figcaption:before {
+  background: #0a0a0a;
+  height: 60%;
+  position: absolute;
+  content: '';
+  opacity: 0;
+  -webkit-transition: all 0.35s steps(4);
+  transition: all 0.35s steps(4);
+  z-index: 1;
+  left: 50%;
+  right: 50%;
+}
+figure.serviceHover:before {
+  top: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+}
+figure.serviceHover:after {
+  top: 25%;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+figure.serviceHover figcaption:before {
+  top: 50%;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  z-index: -1;
+}
+figure.serviceHover figcaption:after {
+  top: 75%;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  z-index: -1;
+}
+figure.serviceHover figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 30px;
+}
+figure.serviceHover h2,
+figure.serviceHover p,
+figure.serviceHover .icons {
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+}
+figure.serviceHover h2 {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+figure.serviceHover p {
+  font-weight: 300;
+}
+figure.serviceHover .icons {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+}
+figure.serviceHover:hover:after,
+figure.serviceHover.hover:after,
+figure.serviceHover:hover:before,
+figure.serviceHover.hover:before,
+figure.serviceHover:hover figcaption:after,
+figure.serviceHover.hover figcaption:after,
+figure.serviceHover:hover figcaption:before,
+figure.serviceHover.hover figcaption:before {
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+}
+figure.serviceHover:hover figcaption h2,
+figure.serviceHover.hover figcaption h2 {
+  opacity: 1;
+}
+figure.serviceHover:hover figcaption p,
+figure.serviceHover.hover figcaption p {
+  opacity: 0.7;
+}
+/* =====================디자이너===================== */
+.designerMain {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background: black; */
+  position: relative;
+  top: 300px;
+}
+
+.designWrapper {
+  position: relative;
+  height: 300px;
+  width: 600px;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: row;
+  transition: all 200ms ease-in-out;
+}
+
+.designImage {
+  height: 300px;
+  width: 450px;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  position: relative;
+  right: 200px;
+}
+
+#deimage {
+  height: 300px;
+  width: 450px;
+  object-fit: cover;
+  object-position: top;
+  transition: all 200ms ease-in-out;
+  position: relative;
+}
+
+.book-design-image {
+  object-position: center;
+}
+
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  left: 380px;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+}
+
+h1 {
+  position: relative;
+  bottom: 0;
+  height: 300px;
+  color: #050303;
+  font-size: 50px;
+  font-family: Oswald;
+  text-transform: uppercase;
+  transition: all 200ms ease-in-out;
+}
+a:visited { color: black;}
+.designWrapper:hover img {
+  transform: scale(2);
+  /*object-position: bottom;*/
+}
+
+.designWrapper:hover h1 {
+  bottom: 100px;
+  transform: scale(.4);
+}
+
+.designWrapper:hover .image-wrapper {
+  width: 800px;
+}
+
+
+
